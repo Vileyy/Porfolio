@@ -1,11 +1,12 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
-import AboutSection from "@/components/AboutSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import ContactSection from "@/components/ContactSection";
+import AboutPage from "@/app/about/page";
+import ProjectsPage from "@/app/projects/page";
+import ContactPage from "@/app/contact/page";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -14,6 +15,17 @@ export default function Home() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Handle hash navigation on page load
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash && ["home", "about", "projects", "contact"].includes(hash)) {
+      // Add a small delay to ensure the page is fully rendered
+      setTimeout(() => {
+        scrollToSection(hash);
+      }, 100);
+    }
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -242,13 +254,13 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <AboutSection />
+      <AboutPage />
 
       {/* Projects Section */}
-      <ProjectsSection />
+      <ProjectsPage />
 
       {/* Contact Section */}
-      <ContactSection />
+      <ContactPage />
     </div>
   );
 }
