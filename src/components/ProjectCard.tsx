@@ -32,19 +32,18 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110"
           onError={(e) => {
-            // Fallback to a gradient background if image fails to load
             const target = e.target as HTMLImageElement;
             target.style.display = "none";
           }}
         />
 
         {/* Fallback content */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white">
             <div className="text-4xl mb-2">📱</div>
             <div className="text-sm font-medium opacity-80">Project Image</div>
           </div>
-        </div>
+        </div> */}
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>

@@ -9,48 +9,97 @@ import {
   SiFirebase,
   SiRedux,
   SiTailwindcss,
+  SiJavascript,
+  SiNodedotjs,
+  SiMysql,
+  SiMongodb,
+  SiExpress,
+  SiAndroidstudio,
+  SiHtml5,
+  SiCss3,
 } from "react-icons/si";
+import { FaJava, FaDatabase } from "react-icons/fa";
 
-const skills = [
-  { name: "React Native", icon: SiReact, level: 90, color: "text-blue-400" },
-  { name: "TypeScript", icon: SiTypescript, level: 85, color: "text-blue-600" },
+const skillCategories = [
   {
-    name: "Next.js",
-    icon: SiNextdotjs,
-    level: 88,
-    color: "text-black dark:text-white",
+    category: "Front-end",
+    color: "text-blue-600",
+    bgColor: "bg-blue-100 dark:bg-blue-900/30",
+    skills: [
+      { name: "React Native", icon: SiReact, color: "text-blue-400" },
+      {
+        name: "Next.js",
+        icon: SiNextdotjs,
+        color: "text-black dark:text-white",
+      },
+      { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-600" },
+      { name: "HTML5", icon: SiHtml5, color: "text-orange-600" },
+      { name: "CSS3", icon: SiCss3, color: "text-blue-500" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+    ],
   },
-  { name: "Firebase", icon: SiFirebase, level: 82, color: "text-orange-500" },
-  { name: "Redux", icon: SiRedux, level: 80, color: "text-purple-600" },
   {
-    name: "Tailwind CSS",
-    icon: SiTailwindcss,
-    level: 92,
-    color: "text-cyan-400",
+    category: "Back-end",
+    color: "text-green-600",
+    bgColor: "bg-green-100 dark:bg-green-900/30",
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs, color: "text-green-600" },
+      {
+        name: "Express.js",
+        icon: SiExpress,
+        color: "text-gray-600 dark:text-gray-400",
+      },
+      { name: "Java", icon: FaJava, color: "text-red-600" },
+    ],
+  },
+  {
+    category: "Database",
+    color: "text-purple-600",
+    bgColor: "bg-purple-100 dark:bg-purple-900/30",
+    skills: [
+      { name: "Firebase", icon: SiFirebase, color: "text-orange-500" },
+      { name: "MySQL", icon: SiMysql, color: "text-blue-700" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+      { name: "SQL Server", icon: FaDatabase, color: "text-blue-600" },
+    ],
+  },
+  {
+    category: "Tools & Others",
+    color: "text-gray-600",
+    bgColor: "bg-gray-100 dark:bg-gray-800",
+    skills: [
+      {
+        name: "Android Studio",
+        icon: SiAndroidstudio,
+        color: "text-green-600",
+      },
+      { name: "Redux", icon: SiRedux, color: "text-purple-600" },
+    ],
   },
 ];
 
 const timeline = [
   {
-    year: "2024",
-    title: "Final-year IT Student",
-    company: "TDMU University",
+    year: "03/2024 - 05/2024",
+    title: "Product Labeling Analytics for AI",
+    company: " Acacy Company",
     description:
-      "Hoàn thiện chương trình đại học với chuyên ngành Công nghệ thông tin, tập trung vào phát triển ứng dụng mobile và web.",
+      "Performed product data labeling and annotation to support AI training models, ensuring accuracy and consistency in datasets.",
   },
   {
-    year: "2023",
+    year: "12/2023 - 02/2024",
     title: "Mobile App Developer",
-    company: "Freelance Projects",
+    company: "Fruit Shop App",
     description:
-      "Phát triển các ứng dụng mobile với React Native cho các doanh nghiệp nhỏ và vừa, tạo ra các giải pháp công nghệ hiệu quả.",
+      "Developed a mobile application using Java and Android Studio for a fruit shop. Implemented Firebase services including Realtime Database for product management and Storage for handling images, enabling users to browse and purchase fruits conveniently.",
   },
   {
-    year: "2022",
-    title: "Web Development Intern",
-    company: "Local Tech Company",
+    year: "05/2025 - 09/2025",
+    title: "Halora Cosmetics",
+    company: "ACB COMPUTER COMPANY",
     description:
-      "Thực tập phát triển web với Next.js và React, học hỏi quy trình làm việc chuyên nghiệp và best practices.",
+      "Building a full-stack e-commerce system: mobile app with React Native and admin dashboard with Next.js + Firebase.",
   },
 ];
 
@@ -106,43 +155,41 @@ export default function AboutPage() {
 
         {/* Skills Grid */}
         <AnimatedSection delay={0.4} className="mb-20">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
             Technical Skills
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {skillCategories.map((category, categoryIndex) => (
               <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 30 }}
+                key={category.category}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 group"
+                className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-200 dark:border-gray-700"
               >
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-gray-600 transition-colors">
-                    <skill.icon className={`w-8 h-8 ${skill.color}`} />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white ml-4">
-                    {skill.name}
-                  </h3>
-                </div>
-
-                <div className="relative">
-                  <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
-                    <span>Proficiency</span>
-                    <span>{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <h3
+                  className={`text-lg font-semibold ${category.color} mb-3 px-3 py-1 ${category.bgColor} rounded-lg inline-block`}
+                >
+                  {category.category}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
                     <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
                       viewport={{ once: true }}
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
-                    />
-                  </div>
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700 rounded-lg hover:shadow-sm transition-all duration-200"
+                    >
+                      <skill.icon className={`w-4 h-4 ${skill.color}`} />
+                      <span className="text-xs font-medium text-gray-900 dark:text-white">
+                        {skill.name}
+                      </span>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
             ))}
@@ -176,9 +223,7 @@ export default function AboutPage() {
                   {/* Content */}
                   <div
                     className={`w-full md:w-5/12 ml-12 md:ml-0 ${
-                      index % 2 === 0
-                        ? "md:mr-auto md:text-right"
-                        : "md:ml-auto md:text-left"
+                      index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
                     }`}
                   >
                     <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">

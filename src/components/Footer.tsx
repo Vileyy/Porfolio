@@ -6,17 +6,17 @@ import { Github, Linkedin, Mail, Heart } from "lucide-react";
 const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/yourusername",
+    href: "https://github.com/Vileyy",
     icon: Github,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/doanhieu21/",
     icon: Linkedin,
   },
   {
     name: "Email",
-    href: "mailto:hieu@example.com",
+    href: "mailto:doanquochieu2104@gmail.com",
     icon: Mail,
   },
 ];
@@ -59,8 +59,8 @@ export default function Footer() {
             className="text-center text-gray-600 dark:text-gray-400"
           >
             <p className="flex items-center justify-center space-x-1">
-              <span>© 2024 Doãn Quốc Hiếu. Made with</span>
-              <motion.span
+              <span>© 2024 Doãn Quốc Hiếu.</span>
+              {/* <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{
                   duration: 1,
@@ -71,7 +71,7 @@ export default function Footer() {
               >
                 <Heart size={16} fill="currentColor" />
               </motion.span>
-              <span>using Next.js & Framer Motion</span>
+              <span>using Next.js & Framer Motion</span> */}
             </p>
           </motion.div>
 
