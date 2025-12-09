@@ -1,16 +1,6 @@
 export const projects = [
   {
     id: 1,
-    title: "Fruit Shop App",
-    description:
-      "A mobile application system built with Java and Android Studio, including both user and admin apps. Integrated Firebase Realtime Database for product and order management, and Firebase Storage for handling product images. The user app allows customers to browse and purchase fruits, while the admin app provides tools to manage inventory and orders.",
-    tech: ["Java", "Android Studio", "Firebase"],
-    image: "/projects/FruitShop.png",
-    github: "https://github.com/Vileyy/FruitShop.git",
-    demo: "#",
-  },
-  {
-    id: 2,
     title: "Halora Cosmetics – Mobile App",
     description:
       "Mobile e-commerce app built with React Native and Redux, integrated with Firebase for authentication, real-time database, and Cloudinary for image storage.",
@@ -24,8 +14,22 @@ export const projects = [
     ],
     image: "/projects/halora-mobile.png",
     github: "https://github.com/Vileyy/user-halora-app.git",
-    demo: "#",
+    youtube: "",
+    demo: "https://youtu.be/kbDpjS7Xgls",
   },
+
+  {
+    id: 2,
+    title: "Halora Cosmetics – Website",
+    description:
+      "E-commerce website for customers built with Next.js 14 and TypeScript, featuring a modern and feminine design. Integrated with Firebase for authentication, real-time database, and Cloudinary for image storage. Includes product browsing, search, cart, checkout, and order tracking functionalities.",
+    tech: ["Next.js", "TypeScript", "Firebase", "TailwindCSS", "Cloudinary"],
+    image: "/projects/halora-user.png",
+    github: "https://github.com/Vileyy/HaloraWebsite",
+    youtube: "",
+    demo: "https://halora-cosmetic.vercel.app/",
+  },
+
   {
     id: 3,
     title: "Halora Cosmetics – Admin Dashboard",
@@ -34,7 +38,8 @@ export const projects = [
     tech: ["Next.js", "TypeScript", "Firebase", "Shadcn UI"],
     image: "/projects/halora-admin.png",
     github: "https://github.com/Vileyy/admin-halora.git",
-    demo: "#",
+    youtube: "",
+    demo: "https://admin-halora.vercel.app/login",
   },
   // {
   //   id: 4,

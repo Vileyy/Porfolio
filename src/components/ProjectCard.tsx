@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Youtube } from "lucide-react";
 import { Project } from "@/lib/projects";
 
 interface ProjectCardProps {
@@ -24,8 +24,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileHover={{ y: -5 }}
       className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 group"
     >
-      {/* Project Image */}
-      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500">
+      {/* Project Image - Clickable */}
+      <a
+        href={project.demo !== "#" ? project.demo : project.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block relative h-48 overflow-hidden bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 cursor-pointer"
+      >
         <Image
           src={project.image}
           alt={project.title}
@@ -45,8 +50,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div> */}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm font-medium flex items-center space-x-1">
+            <ExternalLink size={14} />
+            <span>View Project</span>
+          </div>
+        </div>
+      </a>
 
       {/* Project Content */}
       <div className="p-6">
@@ -84,6 +94,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             <Github size={16} />
             <span className="text-sm font-medium">GitHub</span>
           </motion.a>
+
+          {project.youtube && project.youtube !== "" && (
+            <motion.a
+              href={project.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            >
+              <Youtube size={16} />
+              <span className="text-sm font-medium">YouTube</span>
+            </motion.a>
+          )}
 
           {project.demo !== "#" && (
             <motion.a

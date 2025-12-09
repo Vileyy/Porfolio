@@ -83,23 +83,30 @@ const timeline = [
   {
     year: "03/2024 - 05/2024",
     title: "Product Labeling Analytics for AI",
-    company: " Acacy Company",
+    company: "Acacy Company",
     description:
       "Performed product data labeling and annotation to support AI training models, ensuring accuracy and consistency in datasets.",
   },
   {
-    year: "12/2023 - 02/2024",
-    title: "Mobile App Developer",
-    company: "Fruit Shop App",
+    year: "08/2024 - 10/2024",
+    title: "Halora Cosmetics – Mobile App",
+    company: "Personal Project",
     description:
-      "Developed a mobile application using Java and Android Studio for a fruit shop. Implemented Firebase services including Realtime Database for product management and Storage for handling images, enabling users to browse and purchase fruits conveniently.",
+      "Developed a mobile e-commerce app using React Native and Redux, integrated with Firebase for authentication, real-time database, and Cloudinary for image storage. Features include product browsing, cart management, checkout, and order tracking.",
   },
   {
-    year: "05/2025 - 09/2025",
-    title: "Halora Cosmetics",
-    company: "ACB COMPUTER COMPANY",
+    year: "10/2024 - 12/2024",
+    title: "Halora Cosmetics – Admin Dashboard",
+    company: "Personal Project",
     description:
-      "Building a full-stack e-commerce system: mobile app with React Native and admin dashboard with Next.js + Firebase.",
+      "Developed a web admin system using Next.js and Shadcn UI, integrated with Firebase to manage products, vouchers, and orders with real-time updates. Features include analytics dashboard, inventory management, and order processing.",
+  },
+  {
+    year: "10/2024 - 12/2024",
+    title: "Halora Cosmetics – Website",
+    company: "Personal Project",
+    description:
+      "Built a modern e-commerce website for customers using Next.js 14 and TypeScript. Integrated Firebase for authentication and real-time database, featuring product browsing, search, cart, checkout, and order tracking functionalities.",
   },
 ];
 
